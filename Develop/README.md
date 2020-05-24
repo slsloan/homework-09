@@ -2,7 +2,7 @@
 
   
 
-  ![GitHub](https://img.shields.io/github/license/slsloan/Unit 09 Node.js and ES6+ Homework: Good README Generator)
+  ![GitHub](https://img.shields.io/github/license/slsloan/homework-09)
 
 
   ## Description
