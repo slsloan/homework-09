@@ -7,6 +7,11 @@ const generateMarkdown = require("./utils/generateMarkdown.js");
 const questions = [
     {
         type: "input",
+        name: "name",
+        message: "What is your name?",
+    },
+    {
+        type: "input",
         name: "username",
         message: "What is your GitHub username?",
     },
@@ -61,10 +66,22 @@ const questions = [
 
 
 function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, function (error) {
+        if (error) {
+            console.log(error);
+        }
+        console.log("Success!");
+    });
 }
 
 function init() {
+    inquirer.prompt(questions).then(function (answers) {
+        console.log(answers);
+        const markDownString = generateMarkdown(answers);
+        console.log(markDownString);
 
+        writeToFile("./README.md", markDownString);
+    });
 }
 
 init();
