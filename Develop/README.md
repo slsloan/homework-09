@@ -1,7 +1,10 @@
 # Unit 09 Node.js and ES6+ Homework: Good README Generator
 
-  ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svgslsloan)
   
+
+  ![GitHub](https://img.shields.io/github/license/slsloan/Unit 09 Node.js and ES6+ Homework: Good README Generator)
+
+
   ## Description
   Created a command-line application that dynamically generates a README.md from a user's input.
 
@@ -36,11 +39,14 @@
   ## Questions
   If you have any questions about the application you can open a ticket or contact Samantha Sloan directly at samantha.sloan31@gmail.com
 
-  ![GitHub Image](https://avatars.githubusercontent.com/slsloan" style="width: 40px; hight:40px; border-radius:100%;)
+  
+
+  <img src="https://avatars.githubusercontent.com/slsloan" style="width: 40px; hight:40px; border-radius:100%">
+
 
   ## Copyright:
 
-  slsloan
+  Samantha Sloan (slsloan)
 
   © 2020 All Rights Reserved
   

@@ -1,8 +1,9 @@
 function generateMarkdown(data) {
   return `# ${data.project.trim()}
 
-  ![GitHub license](https://img.shields.io/badge/license-${data.license.trim()}-blue.svg${data.username.trim()})
-  
+  \n
+  ![GitHub](https://img.shields.io/github/license/${data.username.trim()}/${data.project.trim()})\n
+
   ## Description
   ${data.description.trim()}
 
@@ -37,11 +38,12 @@ function generateMarkdown(data) {
   ## Questions
   If you have any questions about the application you can open a ticket or contact ${data.name.trim()} directly at ${data.email.trim()}
 
-  ![GitHub Image](https://avatars.githubusercontent.com/${data.username.trim()}" style="width: 40px; hight:40px; border-radius:100%;)
+  \n
+  <img src="https://avatars.githubusercontent.com/${data.username.trim()}" style="width: 40px; hight:40px; border-radius:100%">\n
 
   ## Copyright:
 
-  ${data.username.trim()}
+  ${data.name} (${data.username.trim()})
 
   © 2020 All Rights Reserved
   `;
