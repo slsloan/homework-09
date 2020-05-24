@@ -37,6 +37,21 @@ const questions = [
         message: "Please write a short description of your project",
     },
     {
+        type: "input",
+        name: "install",
+        message: "What command should be run to install dependencies?",
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "Please write about the usage of your project",
+    },
+    {
+        type: "input",
+        name: "contributing",
+        message: "What should the user know about contributing to the repo?",
+    },
+    {
         type: "list",
         name: "license",
         message: "What kind of license should your project have?",
@@ -44,43 +59,18 @@ const questions = [
     },
     {
         type: "input",
-        name: "install",
-        message: "What command should be run to install dependencies?",
-    },
-    {
-        type: "input",
         name: "tests",
         message: "What command should be run to run tests?",
-    },
-    {
-        type: "input",
-        name: "using",
-        message: "What should the user know about using the repo?",
-    },
-    {
-        type: "input",
-        name: "contributing",
-        message: "What should the user know about contributing to the repo?",
-    },
+    }
 ];
 
-
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, function (error) {
-        if (error) {
-            console.log(error);
-        }
-        console.log("Success!");
-    });
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
 function init() {
-    inquirer.prompt(questions).then(function (answers) {
-        console.log(answers);
-        const markDownString = generateMarkdown(answers);
-        console.log(markDownString);
-
-        writeToFile("./README.md", markDownString);
+    inquirer.prompt(questions).then((inquirerResponse) => {
+        writeToFile("README.md", generateMarkdown({ ...inquirerResponse }));
     });
 }
 
