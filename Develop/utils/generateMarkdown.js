@@ -1,12 +1,10 @@
 function generateMarkdown(data) {
-  return `# ${data.project}
+  return `# ${data.project.trim()}
 
+  ![GitHub license](https://img.shields.io/badge/license-${data.license.trim()}-blue.svg${data.username.trim()})
+  
   ## Description
-  ${data.description}
-
-  [![GitHub license](https://img.shields.io/badge/license-${data.license}-blue.svg${data.username})
-
-  [![GitHub Image](https://contributors-img.web.app/image?repo=brianlfarmerllc/Good_README_Generator)]${data.repo})
+  ${data.description.trim()}
 
   ## Table of Contents
   * [Installation](#installation)
@@ -18,26 +16,32 @@ function generateMarkdown(data) {
 
   ## Installation
   Use the following to install the package: 
-  ${data.install}
+  \`\`\`
+  ${data.install.trim()}
+  \`\`\`
   
   ## Usage
-  ${data.usage}
+  ${data.usage.trim()}
 
   ## Contributing
-  ${data.contributing}
+  ${data.contributing.trim()}
 
   ## License
-  This application is licensed under the ${data.license} license.
+  This application is licensed under the ${data.license.trim()} license.
   
   ## Tests
-  ${data.tests}
+  \`\`\`
+  ${data.tests.trim()}
+  \`\`\`
 
   ## Questions
-  If you have any questions about the application you can open a ticket or contact ${data.name} directly at ${data.email}
+  If you have any questions about the application you can open a ticket or contact ${data.name.trim()} directly at ${data.email.trim()}
+
+  ![GitHub Image](https://avatars.githubusercontent.com/${data.username.trim()}" style="width: 40px; hight:40px; border-radius:100%;)
 
   ## Copyright:
 
-  ${data.name}
+  ${data.username.trim()}
 
   © 2020 All Rights Reserved
   `;
