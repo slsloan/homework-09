@@ -1,8 +1,37 @@
 function generateMarkdown(data) {
+  data.licenseLogo = getLicenseLogo(data.license)
+
+  function getLicenseLogo(license) {
+
+    // The logo is pulled from the links in response to the user
+
+    try {
+      if (license === "APACHE 2.0") {
+        return "![Github license](https://img.shields.io/badge/License-Apache-2.svg)";
+      }
+      if (license === "MIT") {
+        return "![Github license](https://img.shields.io/badge/License-MIT-yellow.svg)";
+
+      }
+      if (license === "BSD 3") {
+        return "![Github license](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)";
+
+      }
+      if (license === "GPL 3.0") {
+        return "![Github license](https://img.shields.io/badge/License-GPL-3.svg)";
+
+      }
+      if (license === "None") {
+        return ""
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return `# ${data.project.trim()}
 
-  \n
-  ![GitHub](https://img.shields.io/badge/license-${data.license}-blue.svg)\n
+  ${data.licenseLogo}
 
   ## Description
   ${data.description.trim()}

@@ -27,15 +27,9 @@ const questions = [
     },
     {
         type: "input",
-        name: "repo",
-        message: "What is the repo title?",
-    },
-    {
-        type: "input",
         name: "project",
         message: "What is your project's name?",
     },
-
     {
         type: "input",
         name: "description",
